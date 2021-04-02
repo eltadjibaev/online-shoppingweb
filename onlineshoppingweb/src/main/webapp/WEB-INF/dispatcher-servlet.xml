@@ -15,7 +15,7 @@
    
    
    <context:component-scan base-package="net.elmu.onlineshoppingweb.controller"/>
-
+   <context:component-scan base-package="net.elmu.shoppingbackendside.daoimpl"/>
    
    
    <bean id="viewResolver"
