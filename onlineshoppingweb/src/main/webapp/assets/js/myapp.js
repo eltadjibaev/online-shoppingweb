@@ -33,7 +33,7 @@ $(function() {
 		$('#listProducts').addClass('active');
 		break;
 	case 'Product Management':
-		$('#manageProduct').addClass('active');
+		$('#manageProducts').addClass('active');
 		break;
 	case 'Shopping Cart':
 		$('#userModel').addClass('active');
@@ -60,7 +60,7 @@ $(function() {
 			jsonUrl = window.contextRoot + '/json/data/category/'
 					+ window.categoryId + '/products';
 		}
-		console.log(jsonUrl);
+		
 		$table.DataTable({
 					
 					lengthMenu : [ [ 3, 5, 10, -1 ],
@@ -288,11 +288,11 @@ $(function() {
 				},
 				messages: {					
 					name: {
-						required: 'Please enter product name!',
+						required: 'Please enter category name!',
 						minlength: 'Please enter atleast five characters'
 					},
 					description: {
-						required: 'Please enter product name!',
+						required: 'Please enter description name!',
 						minlength: 'Please enter atleast five characters'
 					}					
 				},

@@ -59,75 +59,8 @@
 	<div class="wrapper">
 
 		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp" %>
+		<%@include file="flows-navbar.jsp" %>		
 
 		<!-- Page Content -->
 
 		<div class="content">
-			<!-- Loading the home content -->
-			<c:if test="${userClickHome == true }">
-				<%@include file="home.jsp" %>
-			</c:if>
-
-			<!-- Load only when user clicks about -->
-			<c:if test="${userClickAbout == true }">
-				<%@include file="about.jsp" %>
-			</c:if>
-
-			<!-- Load only when user clicks contact -->
-			<c:if test="${userClickContact == true }">
-				<%@include file="contact.jsp" %>
-			</c:if>
-			
-			<!-- Load only when user clicks contact -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
-				<%@include file="listProducts.jsp"%>
-			</c:if>	
-			
-			
-			<!-- Load only when user clicks show product -->
-			<c:if test="${userClickShowProduct == true}">
-				<%@include file="singleProduct.jsp"%>
-			</c:if>								
-
-			<!-- Load only when user clicks manage product -->
-			<c:if test="${userClickManageProducts == true}">
-				<%@include file="manageProducts.jsp"%>
-			</c:if>	
-
-			<!-- Load only when user clicks manage product -->
-			<c:if test="${userClickShowCart == true}">
-				
-			</c:if>	
-
-		</div>
-
-
-		<!-- Footer comes here -->
-		<%@include file="./shared/footer.jsp" %>
-
-		<!-- jQuery -->
-		<script src="${js}/jquery.js"></script>
-
-		<script src="${js}/jquery.validate.js"></script>
-
-		<!-- Bootstrap Core JavaScript -->
-		<script src="${js}/bootstrap.min.js"></script>
-		
-		<!-- DataTable Plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
-		
-		<!-- DataTable Bootstrap Script -->
-		<script src="${js}/dataTables.bootstrap.js"></script>
-		
-		<!-- Bootbox -->
-		<script src="${js}/bootbox.min.js"></script>
-		
-		<!-- Self coded javascript -->
-		<script src="${js}/myapp.js"></script>
-
-	</div>
-
-</body>
-
-</html>
