@@ -64,7 +64,7 @@
 		<div class="content">
 			
    <div class="container">
-    
+    <%-- this will be displayed if the credentials are wrong --%>
    	<c:if test="${not empty message}">
 		<div class="row">
 			<div class="col-xs-12 col-md-offset-2 col-md-8">

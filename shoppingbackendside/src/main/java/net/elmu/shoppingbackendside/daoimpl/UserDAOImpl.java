@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.elmu.shoppingbackendside.dao.UserDAO;
 import net.elmu.shoppingbackendside.dto.Address;
-import net.elmu.shoppingbackendside.dto.Cart;
 import net.elmu.shoppingbackendside.dto.User;
 
 @Repository("userDAO")
@@ -43,17 +42,6 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean updateCart(Cart cart) {
-		try {
-			sessionFactory.getCurrentSession().update(cart);
-			return true;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	@Override
 	public User getByEmail(String email) {
 		String selectQuery = "FROM User WHERE email = :email";
 
@@ -61,7 +49,7 @@ public class UserDAOImpl implements UserDAO {
 			return sessionFactory.getCurrentSession().createQuery(selectQuery, User.class)
 					.setParameter("email", email).getSingleResult();
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 

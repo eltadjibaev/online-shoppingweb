@@ -35,8 +35,9 @@ $(function() {
 	case 'Product Management':
 		$('#manageProducts').addClass('active');
 		break;
-	case 'Shopping Cart':
-		$('#userModel').addClass('active');
+	case 'User Cart':
+		console.log("in");
+		$('#userCart').addClass('active');
 		break;		
 	default:
 		if (menu == "Home")
@@ -51,7 +52,6 @@ $(function() {
 
 	// execute the below code only where we have this table
 	if ($table.length) {
-		console.log('Inside the table!');
 		
 		var jsonUrl = '';
 		if (window.categoryId == '') {
@@ -108,11 +108,16 @@ $(function() {
 									var str = '';
 									str += '<a href="'+window.contextRoot+'/show/'+data+'/product" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>&#160;';
 									
-									if(row.quantity < 1) {
-										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
-									}
-									else {
-										str += '<a href="'+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+									if(userRole == 'ADMIN'){
+										str += '<a href="'+window.contextRoot+'/manage/'+data+'/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';	
+									} else {
+										if(row.quantity < 1) {
+											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+										}
+										else {
+											str += '<a href="'+window.contextRoot+'/cart/add/'+data+'/product" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span></a>';
+										}
+										
 									}
 									
 									return str;
